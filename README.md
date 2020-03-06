@@ -7,7 +7,13 @@
 In early 2020, Coronavirus disease (COVID-19) outbreak. The virus is highly contagious through respiratory droplets produced when an infected person coughs or sneezes. For the reason, many Asia country's governments has regulated people to wear masks in public places. In the situation, the mask detection app based on AI edge computing device might be a useful tool for supporting the policy.
 
 ## Ideal Application:
-Through AI OpenVINO toolkit, develop an effective model to detect whetherpeople in the public.
+Through AI OpenVINO toolkit, develop an effective model to detect whether people wear masks correctly or not in the public.
+
+Ideal Example Demo:
+
+![source:https://raw.githubusercontent.com/chenkenanalytic/OpenDevLibrary/master/demo_files/images/target.jpg](https://raw.githubusercontent.com/chenkenanalytic/OpenDevLibrary/master/demo_files/images/target.jpg)
+
+Original Open Resources: https://www.facebook.com/groups/525579498272187/permalink/642268049936664/
 
 ### Step 2:
 Run all the cells and Congrats! You will deploy your first edge app on Google Colab.
