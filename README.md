@@ -1,10 +1,13 @@
-# OpenDevLibrary
-Open Source OpenVINO  Edge developement and deployment on Google Colab using Colab Notebooks
+# Mask Detection in Public
+![source:https://iblnews.org/wp-content/uploads/2019/11/intelAI.jpg](https://iblnews.org/wp-content/uploads/2019/11/intelAI.jpg)
 
-## USAGE STEPS:
+## Project Showcase: Mask Detection in Public
 
-### Step 1:
-Open the demo.ipynb file (available in this repository) and click on open in colab button.
+## Preface:
+In early 2020, Coronavirus disease (COVID-19) outbreak. The virus is highly contagious through respiratory droplets produced when an infected person coughs or sneezes. For the reason, many Asia country's governments has regulated people to wear masks in public places. In the situation, the mask detection app based on AI edge computing device might be a useful tool for supporting the policy.
+
+## Ideal Application:
+Through AI OpenVINO toolkit, develop an effective model to detect whetherpeople in the public.
 
 ### Step 2:
 Run all the cells and Congrats! You will deploy your first edge app on Google Colab.
