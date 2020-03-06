@@ -9,32 +9,29 @@ In early 2020, Coronavirus disease (COVID-19) outbreak. The virus is highly cont
 ## Ideal Application:
 Through AI OpenVINO toolkit, develop an effective model to detect whether people wear masks correctly or not in the public.
 
-Ideal Example Demo:
+Ideal Example Demo (Based on the Mask Detection results, show different colors of square):
+
+(※ Yellow: wear in corret way, Blue: not wear a mask, pink: wear incorrectly) 
 
 ![source:https://raw.githubusercontent.com/chenkenanalytic/OpenDevLibrary/master/demo_files/images/target.jpg](https://raw.githubusercontent.com/chenkenanalytic/OpenDevLibrary/master/demo_files/images/target.jpg)
 
 Original Open Resources: https://www.facebook.com/groups/525579498272187/permalink/642268049936664/
 
-### Step 2:
-Run all the cells and Congrats! You will deploy your first edge app on Google Colab.
+## Actual Development Result
+![source:https://raw.githubusercontent.com/chenkenanalytic/OpenDevLibrary/master/demo_files/images/FACE-output.png](https://raw.githubusercontent.com/chenkenanalytic/OpenDevLibrary/master/demo_files/images/FACE-output.png)
 
+## Project To-Dos
 
-## Project Members:
-
-***MUHAMMAD ALI***
-
-***SLACK USERNAME: Muhammad.Ali***
-
-***EMAIL: malirashid1994@gmail.com***
-
-***ABHIK BANERJEE***
-
-***SLACK USERNAME: Abhik Banerjee***
-
+1. Apply orignial model to transfer learning and fine tuning on "Mask Detection Dataset" (open-source dataset)
+2. Adopt softmax activation function for detecting different situations of wearing masks
+3. Deploy on edge devices to realize edge computing
 
 ## REFERENCES:
 ### Intel's Official Installation Guide for OpenVINO on linux: 
 [https://docs.openvinotoolkit.org/latest/_docs_install_guides_installing_openvino_linux.html#install-openvino]
 
-### Model used in Demo.ipynb i.e. vehicle-attributes-recognition-barrier-0039 
-[https://docs.openvinotoolkit.org/2019_R1/_vehicle_attributes_recognition_barrier_0039_description_vehicle_attributes_recognition_barrier_0039.html]
+### Model used in Demo.ipynb i.e. face-detection-retail-0005
+[https://docs.openvinotoolkit.org/latest/_models_intel_face_detection_retail_0005_description_face_detection_retail_0005.html]
+
+### Open Source Dataset
+[https://www.facebook.com/groups/525579498272187/permalink/642268049936664/]
