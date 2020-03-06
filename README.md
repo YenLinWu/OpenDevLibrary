@@ -34,16 +34,16 @@ Development tool: Google Colab
 
 Changeable Codes:
 
- > 1. Downloading Model Part
+ > ## 1. Downloading Model Part
  >
- > # You may change the argument, name, to the model intended to download
+ > ### You may change the argument, name, to the model intended to download
  >
  > !python $model_zoo'tools/downloader/'downloader.py --name face-detection-retail-0005 --precisions FP32-INT8 -o /content/OpenDevLibrary/demo_files/models
  >
  >
- > 2. Running Inference Part
+ > ## 2. Running Inference Part
  >
- > # You may change the arguments, i for input_image, t for detect_purpose, m for model usage.
+ > ### You may change the arguments, i for input_image, t for detect_purpose, m for model usage.
  >
  > !source /opt/intel/openvino/bin/setupvars.sh && python app.py -i "/content/OpenDevLibrary/demo_files/images/00e992ca.jpg" -t "FACE" -m "/content/OpenDevLibrary/demo_files/models/intel/face-detection-retail-0005/FP32-INT8/face-detection-retail-0005.xml" 
 
