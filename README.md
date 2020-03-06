@@ -39,6 +39,10 @@ Development tool: Google Colab
 3. Deploy on edge devices to realize edge computing
 
 ## REFERENCES:
+
+### OpenVINO Edge AI Applications deployment on Google Colaboratory
+https://github.com/alihussainia/OpenDevLibrary
+
 ### Intel's Official Installation Guide for OpenVINO on linux: 
 https://docs.openvinotoolkit.org/latest/_docs_install_guides_installing_openvino_linux.html#install-openvino
 
