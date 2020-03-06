@@ -1,6 +1,8 @@
 # Mask Detection in Public
 ![source:https://iblnews.org/wp-content/uploads/2019/11/intelAI.jpg](https://iblnews.org/wp-content/uploads/2019/11/intelAI.jpg)
+
 <center>Intel® Edge AI Scholarship Program - Project Showcase: Mask Detection in Public</center>
+
 
 ## Preface:
 In early 2020, Corona Virus in 
