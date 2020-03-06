@@ -5,10 +5,8 @@ import numpy as np
 from handle_models import handle_output, preprocessing
 from inference import Network
 
-
 CAR_COLORS = ["white", "gray", "yellow", "red", "green", "blue", "black"]
 CAR_TYPES = ["car", "bus", "truck", "van"]
-
 
 def get_args():
     '''
@@ -22,7 +20,7 @@ def get_args():
     d_desc = "Device, if not CPU (GPU, FPGA, MYRIAD)"
     i_desc = "The location of the input image"
     m_desc = "The location of the model XML file"
-    t_desc = "The type of model: POSE, TEXT or CAR_META"
+    t_desc = "The type of model: POSE, TEXT, CAR_META or FACE"
 
     # -- Add required and optional groups
     parser._action_groups.pop()
@@ -93,12 +91,24 @@ def create_output_image(model_type, image, output):
         # Add the mask to the image
         image = image + text_mask
         return image
-    elif model_type == "CAR_META":
+    elif model_type == "FACE":
         print(image.shape)
         frame = draw_boxes(image, output)
         print(frame.shape)
         # print(image.shpae)
         return frame
+    elif model_type == "CAR_META":
+        # Get the color and car type from their lists
+        color = CAR_COLORS[output[0]]
+        car_type = CAR_TYPES[output[1]]
+        # Scale the output text by the image shape
+        scaler = max(int(image.shape[0] / 1000), 1)
+        # Write the text of color and type onto the image
+        image = cv2.putText(image, 
+            "Color: {}, Type: {}".format(color, car_type), 
+            (50 * scaler, 100 * scaler), cv2.FONT_HERSHEY_SIMPLEX, 
+            2 * scaler, (255, 255, 255), 3 * scaler)
+        return image
     else:
         print("Unknown model type, unable to create output image.")
         return image

@@ -55,12 +55,29 @@ def handle_text(output, input_shape):
 #     color_class = np.argmax(color)
     
 #     return color_class, type_class
-def handle_car(output, input_shape):
+def handle_face(output, input_shape):
     # print(output['527'][0][0])
     boxes = output['527'][0][0]
 
     return boxes
-
+    
+def handle_car(output, input_shape):
+    '''
+    Handles the output of the Car Metadata model.
+    Returns two integers: the argmax of each softmax output.
+    The first is for color, and the second for type.
+    '''
+    color = output['color'].flatten()
+    car_type = output['type'].flatten()
+    
+    # TODO 1: Get the argmax of the "color" output
+    color_class = np.argmax(color)
+    # TODO 2: Get the argmax of the "type" output
+    type_class = np.argmax(car_type)
+    
+    color_class = np.argmax(color)
+    
+    return color_class, type_class
 
 def handle_output(model_type):
     '''
@@ -71,6 +88,8 @@ def handle_output(model_type):
         return handle_pose
     elif model_type == "TEXT":
         return handle_text
+    elif model_type == "FACE":
+        return handle_face
     elif model_type == "CAR_META":
         return handle_car
     else:
