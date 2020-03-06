@@ -52,6 +52,20 @@ def get_mask(processed_output):
 
     return mask
 
+def draw_boxes(img, output):
+    '''
+    Draw bounding boxes onto the frame.
+    '''
+    
+    for box in output: # Output shape is 1x1x100x7
+        conf = box[2]
+        if conf >= 0.5:
+            xmin = int(box[3] * img.shape[1])
+            ymin = int(box[4] * img.shape[0])
+            xmax = int(box[5] * img.shape[1])
+            ymax = int(box[6] * img.shape[0])
+            cv2.rectangle(img, (xmin, ymin), (xmax, ymax), (0, 0, 255), 1)
+    return img
 
 def create_output_image(model_type, image, output):
     '''
@@ -80,17 +94,11 @@ def create_output_image(model_type, image, output):
         image = image + text_mask
         return image
     elif model_type == "CAR_META":
-        # Get the color and car type from their lists
-        color = CAR_COLORS[output[0]]
-        car_type = CAR_TYPES[output[1]]
-        # Scale the output text by the image shape
-        scaler = max(int(image.shape[0] / 1000), 1)
-        # Write the text of color and type onto the image
-        image = cv2.putText(image, 
-            "Color: {}, Type: {}".format(color, car_type), 
-            (50 * scaler, 100 * scaler), cv2.FONT_HERSHEY_SIMPLEX, 
-            2 * scaler, (255, 255, 255), 3 * scaler)
-        return image
+        print(image.shape)
+        frame = draw_boxes(image, output)
+        print(frame.shape)
+        # print(image.shpae)
+        return frame
     else:
         print("Unknown model type, unable to create output image.")
         return image

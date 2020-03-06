@@ -49,14 +49,8 @@ def text_detection(input_image):
 
 
 def car_meta(input_image):
-    '''
-    Given some input image, preprocess the image so that
-    it can be used with the related car metadata model
-    you downloaded previously. You can use cv2.resize()
-    to resize the image.
-    '''
+
     preprocessed_image = np.copy(input_image)
 
-    # TODO: Preprocess the image for the car metadata model
-    preprocessed_image = preprocessing(preprocessed_image, 72, 72)
+    preprocessed_image = preprocessing(preprocessed_image, 300, 300)
     return preprocessed_image
